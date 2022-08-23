@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root {
+    --very-dk-blue: hsl(233, 47%, 7%);
+    --dk-desaturated-blue: hsl(244, 38%, 16%);
+    --soft-violet: hsl(277, 64%, 61%);
+
+    --white:  hsl(0, 0%, 100%);
+    --transparent-main-paragraph:  hsla(0, 0%, 100%, 0.75);
+    --transparent-stat: hsla(0, 0%, 100%, 0.6);
+
+    --font-inter: 'Inter', sans-serif;
+    --font-lexend: 'Lexend Deca', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--very-dk-blue);
+    font-family: var(--font-inter);
+}
+
+.container {
+    max-width: 310px;
+    background-color: var(--dk-desaturated-blue);
+    border-radius: .7rem;
+    padding-bottom: .7rem;
+    overflow: hidden;
+}
+
+.container img {
+    width: 100%;
+    filter: contrast(.6);
+}
+
+.images {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.images::after {
+    content:'';
+    position: absolute;
+    top: 0;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    background-color: var(--soft-violet);
+    mix-blend-mode: multiply;
+}
+
+.texts {
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.texts h1 {
+    color: var(--white);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.texts span {
+    color: var(--soft-violet);
+}
+
+.texts p {
+    color: var(--transparent-main-paragraph);
+    font-size: .9rem;
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.stat strong {
+    color: var(--white);
+    font-size: 1.4rem;
+    margin-bottom: .5rem;
+}
+
+.stat p {
+    color: var(--transparent-stat);
+    text-transform: uppercase;
+    font-size: .75rem;
+}
+
+@media (min-width: 900px) {
+    .container {
+        max-width: 1110px;
+        display: flex;
+        flex-direction: row-reverse;
+        padding-bottom: 0;
+    }
+
+    .images {
+        position: relative;
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .images img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .images::after {
+        bottom: 0px;
+    }
+
+    .content {
+        padding: 4rem 2rem 2rem 5rem;
+    }
+
+    .texts {
+        text-align: left;
+        padding: 0;
+    }
+
+    .texts h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        margin-right: 1.9rem;
+    }
+
+    .texts p {
+        font-size: 1rem;
+        margin-bottom: 4rem;
+        margin-right: 4.5rem;
+    }
+
+    .stats {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 7rem;
+    }
+
+    .stat {
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .stat strong {
+        display: block;
+    }
+}
